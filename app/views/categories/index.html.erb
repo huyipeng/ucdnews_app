@@ -1,0 +1,24 @@
+<% provide(:title, '类别设置') %>
+
+<section class="panel categorypanel">
+	<h3>类别设置</h3>
+	<%= form_for(@category) do |f| %>	
+	    <%= render 'shared/error_categories', object: f.object %>	
+	    <span><%= f.text_field :content, placeholder: "添加新类别" %></span>
+	    <span class="add"><%= f.submit "添加" %></span>
+	<% end %>	
+
+	<ul class="categorylist">
+		<% @categories.each do |category| %>	
+		    <li>
+		    	<%=  category.content %>
+		    	<% if current_user.admin? %>
+		    	  <%= link_to "删除", category, class: "delete",  method: :delete, 
+		    	                                data: { confirm: "你确定删除该类别？"},
+		    	                                title: category.content %>
+		    	<% end %>
+		    </li>
+		<% end %>
+	</ul>
+</section>
+

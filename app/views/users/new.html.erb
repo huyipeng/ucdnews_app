@@ -1,0 +1,20 @@
+<% provide(:title, '注册') %>
+
+<%= render 'shared/error_messages' %>
+
+<section class="login panel">
+	<h3>注册UCDNews · 来了就是好同志</h3>
+
+	<%= form_for(@user) do |f| %>
+	  <p><%= f.text_field :name, "placeholder" => "用户名" %></p>
+	  <p><%= f.text_field :email, "placeholder" => "Email" %></p>
+	  <p><%= f.password_field :password, "placeholder" => "密码" %></p>
+	  <p><%= f.password_field :password_confirmation, "placeholder" => "确认密码" %></p>
+	  <p class="submit"><%= f.submit "注  册" %></p>
+	<% end %>
+</section>
+<div style="text-align:center;margin-bottom:40px;font-size:0.9em;">
+	<p>
+		已有UCDNews帐号？☞&nbsp;<%= link_to "赶紧登录", '#' %>
+	</p>
+</div>

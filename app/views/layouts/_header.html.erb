@@ -1,0 +1,19 @@
+<% if signed_in? %>
+  <nav class="managenav">
+  	<span class="managelogo">UCDNews</span>
+    <%= link_to "首页", root_path %>
+    <%if current_user.admin? %>
+      <%= link_to "添加文章", '#'%>
+      <%= link_to "管理文章", '#'%>
+      <%= link_to "类别设置", categories_path %>
+    <% end %>
+    <%= link_to "退出", signout_path, method: "delete" %>
+    <%= link_to current_user.name, edit_user_path(current_user) %>
+   </nav>
+<% else %>
+  <header>
+	<%= link_to "UCDNews", root_path, class: "logo" %>
+	<span class="time">2013.8.18~8.24(第33期)</span>
+  </header>
+<% end %>
+

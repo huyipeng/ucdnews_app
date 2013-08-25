@@ -1,0 +1,18 @@
+<% provide(:title, "设置") %>
+
+<%= render 'shared/error_messages' %>
+
+<section class="login panel">
+	<h3>设置个人信息</h3>
+
+	<%= gravatar_for @user %>
+	<a href="http://gravatar.com/emails">修改头像</a>
+
+	<%= form_for(@user) do |f| %>
+	  <p><%= f.text_field :name, "placeholder" => "用户名" %></p>
+	  <p><%= f.password_field :password, "placeholder" => "密码" %></p>
+	  <p><%= f.password_field :password_confirmation, "placeholder" => "确认密码" %></p>
+	  <p class="submit"><%= f.submit "保存修改" %></p>
+	<% end %>
+
+</section>

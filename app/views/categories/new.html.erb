@@ -1,0 +1,9 @@
+<% provide(:title, '类别设置') %>
+
+<%= form_for(@category) do |f| %>
+  <%= render 'shared/error_categories', object: f.object %>
+  <p>
+    <%= f.text_field :content, placeholder: "添加新类别" %>
+  </p>
+  <%= f.submit "添加" %>
+<% end %>

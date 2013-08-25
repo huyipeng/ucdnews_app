@@ -1,0 +1,88 @@
+"zh-CN":
+  views:
+    pagination:
+      first: "&laquo; 首页"
+      last: "末页 &raquo;"
+      previous: "&lsaquo; 前页"
+      next: "后页 &rsaquo;"
+      truncate: "..."
+
+  activerecord:
+    attributes:
+      user:
+        password_digest: "密码"
+        name: "用户名"
+        email: "邮箱"
+        password: "密码"
+        password_confirmation: "确认密码"
+      category:
+        content: "内容"
+
+  errors:
+    models:
+      user: 用户
+    messages:
+      inclusion: "不包含于列表中"
+      exclusion: "是保留关键字"
+      invalid: "是无效的"
+      confirmation: "不一致"
+      accepted: "必须是可被接受的"
+      empty: "不能留空"
+      blank: "不能为空"
+      too_long: "过长（最长为 %{count} 个字符）"
+      too_short: "过短（最短为 %{count} 个字符）"
+      wrong_length: "长度非法（必须为 %{count} 个字符）"
+      taken: "已经被使用"
+      not_a_number: "不是数字"
+      not_an_integer: "必须是整数"
+      greater_than: "必须大于 %{count}"
+      greater_than_or_equal_to: "必须大于或等于 %{count}"
+      equal_to: "必须等于 %{count}"
+      less_than: "必须小于 %{count}"
+      less_than_or_equal_to: "必须小于或等于 %{count}"
+      odd: "必须为单数"
+      even: "必须为双数"
+      record_invalid: "校验失败: %{errors}"
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: 大约1小时
+        other: 大约 %{count} 小时
+      about_x_months:
+        one: 大约1个月
+        other: 大约 %{count} 个月
+      about_x_years:
+        one: 大约1年
+        other: 大约 %{count} 年
+      almost_x_years:
+        one: 接近1年
+        other: 接近 %{count} 年
+      half_a_minute: 30秒
+      less_than_x_minutes:
+        one: 不到1分钟
+        other: 不到 %{count} 分钟
+      less_than_x_seconds:
+        one: 不到1秒
+        other: 不到 %{count} 秒
+      over_x_years:
+        one: 1年多
+        other: ! '%{count} 年多'
+      x_days:
+        one: 1天
+        other: ! '%{count} 天'
+      x_minutes:
+        one: 1分钟
+        other: ! '%{count} 分钟'
+      x_months:
+        one: 1个月
+        other: ! '%{count} 个月'
+      x_seconds:
+        one: 1秒
+        other: ! '%{count} 秒'
+    prompts:
+      day: 日
+      hour: 时
+      minute: 分
+      month: 月
+      second: 秒
+      year: 年

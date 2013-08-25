@@ -1,0 +1,11 @@
+<% if @user.errors.any? %>
+  <div class="alert alert-error alert_tips">
+	<button type="button" class="close" data-dismiss="alert">×</button>
+	<strong>童鞋，提交的信息出现错误</strong>
+	<ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li> <%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
