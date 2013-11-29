@@ -1,0 +1,30 @@
+<% provide(:title, '期刊管理') %>
+
+<section class="panel journalpanel">
+	<h3>期刊管理</h3>
+	<%= form_for(@journal) do |f| %>	
+	    <%= render 'shared/error_categories', object: f.object %>	
+	    <p><%= f.text_field :starttime, placeholder: "起始时间" , value: "#{@starttime}" %></p>
+	    <p><%= f.text_field :endtime, placeholder: "结束时间", value: "#{@endtime}" %></p>
+	    <p><%= f.text_field :journalnum, placeholder: "期刊号" %></p>
+	    <p><%= f.text_area :note, placeholder: "后记..." %></p>
+	    <p class="submit"><%= f.submit "添  加" %></p>
+	<% end %>	
+	
+
+
+	<ul class="journallist">
+		<% @journals.each do |journal| %>	
+		    <li>
+		    	<span><%= journal.starttime.strftime("%Y.%m.%d") %> ~ <%= journal.endtime.strftime("%Y.%m.%d") %></span>
+		    	<span>期刊号：<%= journal.journalnum %></span>
+		    	<% if current_user.admin? %>
+		    	    <%= link_to "删除", journal, class: "delete",  method: :delete, 
+		    	                                data: { confirm: "你确定删除该类别？"},
+		    	                                title: journal.journalnum %>
+                    <%= link_to "修改",  edit_journal_path(journal), class: "delete" %>
+		    	<% end %>
+		    </li>
+		<% end %>
+	</ul>
+</section>

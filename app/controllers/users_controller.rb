@@ -5,6 +5,10 @@ class UsersController < ApplicationController
   
   def show
   	@user = User.find(params[:id])
+
+    rescue ActiveRecord::RecordNotFound
+      flash[:error] = "你浏览的内容去火星了"
+      redirect_to root_path
   end
 
   def new
@@ -44,5 +48,4 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       redirect_to(root_path) unless current_user?(@user)
     end
-
 end

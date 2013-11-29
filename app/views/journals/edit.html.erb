@@ -1,0 +1,13 @@
+<% provide(:title, '修改期刊数据') %>
+
+<section class="panel journalpanel">
+	<h3>修改期刊信息</h3>
+	<%= form_for(@journal) do |f| %>	
+	    <%= render 'shared/error_categories', object: f.object %>	
+	    <p><%= f.text_field :starttime, placeholder: "起始时间"  %></p>
+	    <p><%= f.text_field :endtime, placeholder: "结束时间"  %></p>
+	    <p><%= f.text_field :journalnum, placeholder: "期刊号"  %></p>
+	    <p><%= f.text_area :note, placeholder: "后记..." %></p>
+	    <p class="submit"><%= f.submit "更  新" %></p>
+	<% end %>	
+</section>

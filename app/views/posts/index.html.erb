@@ -1,0 +1,27 @@
+<% provide(:title, "管理文章") %>
+
+<section class="panel postpanel">
+	<h3>管理文章</h3>
+	<ul class="postlist">
+		<% @posts.each_with_index do |post, i| %>
+		    <li class="newsitem">
+		    	<span class="itemnum"><%= i+1 %></span>
+		    	<% if !post.category.nil? %>
+		          <span class="itemcategory"><%= post.category.content %></span>
+		        <% end %>
+		        <a href="<%= post.link %>" class="itemtitle" target="_blank"><%= post.title %></a>
+		        <% if !post.author.blank? %>
+	              <small class="itemauthor">· <%= post.author %></small>
+	            <% end %>
+		    	<small class="itemauthor">&nbsp;&nbsp;来自于 <%= post.user.name %></small>
+		    	<small class="itemauthor">&nbsp;&nbsp;第 <%= post.journal.journalnum %> 期 </small>
+		    	<% if current_user.admin? %>
+		    	    <%= link_to "删除", post, class: "delete",  method: :delete, 
+		    	                                data: { confirm: "你确定删除该类别？"},
+		    	                                title: post.title %>
+		    	    <%= link_to "修改",  edit_post_path(post), class: "delete" %>
+		    	<% end %>
+		    </li>
+		<% end %>
+	</ul>
+</section>

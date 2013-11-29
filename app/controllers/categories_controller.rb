@@ -1,14 +1,16 @@
 class CategoriesController < ApplicationController
   before_action :signed_in_user
-  before_action :admin_user, only: :destroy
+  before_action :admin_user, only: [:destroy, :index, :show, :create]
 
   def index
     @category = current_user.categories.build if signed_in?
     @categories = Category.all
   end
 
-  def new
-    @category = current_user.categories.build if signed_in?
+  def show
+    rescue ActiveRecord::RecordNotFound
+      flash[:error] = "你浏览的内容去火星了"
+      redirect_to root_path
   end
 
   def create
@@ -20,10 +22,6 @@ class CategoriesController < ApplicationController
       @categories = Category.all
   		render 'index'
   	end
-  end
-
-  def show
-    @categories = Category.all
   end
 
   def destroy
@@ -39,7 +37,5 @@ class CategoriesController < ApplicationController
 
     def admin_user
       @category = Category.find_by(id: params[:id])
-      redirect_to categories_url if @category.nil?
     end
-
 end

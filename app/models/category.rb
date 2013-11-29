@@ -1,6 +1,9 @@
 class Category < ActiveRecord::Base
   belongs_to :user
-  default_scope -> {order('created_at ASC')}
+
+  has_many :posts
+
+  default_scope -> {order('id ASC')}
   validates :content, presence: true
   validates :user_id, presence: true
 end

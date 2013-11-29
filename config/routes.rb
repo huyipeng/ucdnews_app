@@ -2,14 +2,14 @@ UcdnewsApp::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy ]
   resources :categories
+  resources :journals
+  resources :posts
 
   root to: "main_pages#home"
   match '/signup', to: 'users#new', via:'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
   match '/about', to: "main_pages#about", via: 'get'
-
-
 
   
   # The priority is based upon order of creation: first created -> highest priority.
