@@ -8,9 +8,9 @@ gem 'bcrypt-ruby', '3.0.1'
 
 gem 'pg', '0.15.1' 
 
-gem 'sass-rails', '4.0.0'
+gem 'sass-rails'
 gem 'uglifier', '2.1.1'
-gem 'coffee-rails', '4.0.0'
+gem 'coffee-rails'
 gem 'jquery-rails', '2.2.1'
 gem 'kaminari'
 
@@ -25,18 +25,16 @@ group :doc do
   gem 'sdoc', '0.3.20', require: false
 end
 
-group :test do
+group :development, :test do
+	gem 'capistrano', '2.9.0', require: false
+    gem 'rvm-capistrano', require: false
+	
 	gem 'rspec-rails', '2.13.1'
 	gem 'selenium-webdriver', '2.0.0'
 	gem 'capybara', '2.1.0'
 end
 
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
