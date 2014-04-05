@@ -3,8 +3,10 @@ class MainPagesController < ApplicationController
     @journal = Journal.last
     @journaltotal = Journal.count
 
-    @next = Journal.all.where("id > ?", @journal.id).order("id ASC").first
-    @prev = Journal.all.where("id < ?", @journal.id).order("id DESC").first
+    if @journal
+    	@next = Journal.all.where("id > ?", @journal.id).order("id ASC").first
+    	@prev = Journal.all.where("id < ?", @journal.id).order("id DESC").first
+    end
   end
 
   def about
