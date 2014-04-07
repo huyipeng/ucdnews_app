@@ -100,7 +100,9 @@ textarea {
 
 @font-face {
   font-family: CanterBold;
-  src: url("Canter Bold.otf");
+  src: font-url("CanterBold.otf") format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 header { margin-top: 10px; border-bottom: 3px solid #eae9e0;padding: 0 8px;line-height:1;}
