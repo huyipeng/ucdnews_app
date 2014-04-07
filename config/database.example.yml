@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: ucdnews_development
+  database: ucdnewsapp_development
   pool: 5
   username: huyipeng
   password:
@@ -9,7 +9,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: ucdnews_test
+  database: ucdnewsapp_test
   pool: 5
   username: huyipeng
   password:
