@@ -10,11 +10,6 @@
         <meta name="description" content="在UCDNews，你能浏览最新的UCD文章，包括产品市场、信息交互、用户研究、视觉设计、设计思想、杂七杂八等">
         <meta name="viewport" content="width=device-width">
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
-        <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-        <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-        <%= csrf_meta_tags %>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -22,16 +17,11 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        
-        <header>
-          <%= link_to "UCDNews", root_path, class: "logo" %>
-        </header>
+
         
         <p>
           当前页面不存在！！！
         </p>
 
-        <%= render 'layouts/footer' %>
-        <%= debug(params) if Rails.env.development? %>
     </body>
 </html>
