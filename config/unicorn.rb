@@ -1,9 +1,9 @@
 worker_processes 2
 
-root = "/home/hoowolf/apps/ucdnews/current"
+root = "/home/hoowolf/apps/UcdnewsApp/current"
 working_directory root
 
-listen "/tmp/unicorn.ucdnews.sock", :backlog => 64          
+listen "/tmp/unicorn.UcdnewsApp.sock", :backlog => 64          
 timeout 30
 
 pid "#{root}/tmp/pids/unicorn.pid"

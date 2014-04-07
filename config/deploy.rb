@@ -3,7 +3,7 @@ require "rvm/capistrano"
 
 server "192.241.218.141", :web, :app, :db, primary: true
 
-set :application, "ucdnews"
+set :application, "UcdnewsApp"
 set :user, "huyipeng"
 set :port, 2228
 set :deploy_to, "/home/#{user}/apps/#{application}"
