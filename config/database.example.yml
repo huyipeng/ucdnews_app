@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: ucdnews_development
+  pool: 5
+  username: huyipeng
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: ucdnews_test
+  pool: 5
+  username: huyipeng
+  password:
