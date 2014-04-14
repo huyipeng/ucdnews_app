@@ -1,6 +1,6 @@
 class MainPagesController < ApplicationController
   def home
-    @journal = Journal.last
+    @journal = Journal.first
     @journaltotal = Journal.count
 
     if @journal
